@@ -1,0 +1,64 @@
+@{
+    ViewData["Title"] = "Products";
+
+    var products = new[]
+    {
+        new {
+            Name = "Logitech K120 Keyboard",
+            Url = "https://www.logitech.com/en-us/products/keyboards/k120-usb-standard-computer-keyboard.920-002478.html",
+            Image = "https://ardes.bg/uploads/original/logitech-k120-cheren-611760.jpg"
+        },
+        new {
+            Name = "Samsung Galaxy Buds2 Pro",
+            Url = "https://www.samsung.com/global/galaxy/galaxy-buds2-pro/",
+            Image = "https://cdn.technomarket.bg/ng/240/uploads/library/product/09208932/62ec9eff61f7e.jpg.webp"
+        },
+        new {
+            Name = "Sony WH-1000XM5 Headphones",
+            Url = "https://www.sony.com/electronics/headband-headphones/wh-1000xm5",
+            Image = "data:image/jpeg;base64,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"
+        }
+    };
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>@ViewBag.PageTitle</title>
+</head>
+<body>
+
+<style>
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        img {
+            max-width: 200px;
+            display: block;
+            margin-top: 10px;
+        }
+    </style>
+
+<h1>@ViewBag.PageTitle</h1>
+<p>List with products:</p>
+
+<ul>
+    @foreach (var product in products)
+    {
+        <li>
+            <a href="@product.Url" target="_blank">
+                @product.Name
+            </a>
+            <img src="@product.Image" alt="@product.Name"/>
+        </li>
+    }
+</ul>
+
+<p>
+    Този текст доказва, че стойността идва от Controller чрез ViewBag.
+</p>
+</body>
+</html>
