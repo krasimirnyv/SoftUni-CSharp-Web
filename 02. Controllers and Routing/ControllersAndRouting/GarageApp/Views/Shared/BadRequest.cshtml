@@ -1,0 +1,38 @@
+@{
+    ViewData["Title"] = "Bad Request";
+}
+
+<div class="container d-flex justify-content-center align-items-center" style="min-height: 60vh;">
+    <div class="text-center">
+
+        <div class="mb-4">
+            <span class="display-1 text-warning fw-bold">400</span>
+        </div>
+
+        <h1 class="mb-3">Bad Request</h1>
+
+        @if (Model is string message)
+        {
+            <p class="text-muted mb-4">@message</p>
+        }
+        
+        <p class="text-muted mb-4">
+            The request could not be processed.<br />
+            Please check the provided information and try again.
+        </p>
+
+        <div class="d-flex justify-content-center gap-3">
+            <a asp-controller="Home"
+               asp-action="Index"
+               class="btn btn-primary">
+                Go to Home
+            </a>
+
+            <a href="javascript:history.back()"
+               class="btn btn-outline-secondary">
+                Go Back
+            </a>
+        </div>
+
+    </div>
+</div>

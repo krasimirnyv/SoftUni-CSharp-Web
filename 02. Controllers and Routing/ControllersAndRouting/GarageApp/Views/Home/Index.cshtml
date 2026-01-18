@@ -1,0 +1,54 @@
+﻿@{
+    ViewData["Title"] = "Home";
+}
+
+<div class="container text-center mt-5">
+
+    <!-- Hero section -->
+    <div class="mb-5">
+        <h1 class="display-4 fw-semibold mb-3">
+            Welcome to Your Garages
+        </h1>
+
+        <p class="lead text-muted">
+            Manage garages and cars easily from one place.
+        </p>
+    </div>
+
+    <!-- Action cards -->
+    <div class="row justify-content-center g-4">
+
+        <div class="col-md-4">
+            <div class="card h-100 shadow-sm">
+                <div class="card-body">
+                    <h5 class="card-title">My Garages</h5>
+                    <p class="card-text text-muted">
+                        View all garages and explore their available cars.
+                    </p>
+                    <a asp-controller="Garage"
+                       asp-action="Index"
+                       class="btn btn-outline-primary">
+                        View Garages
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="card h-100 shadow-sm">
+                <div class="card-body">
+                    <h5 class="card-title">My Cars</h5>
+                    <p class="card-text text-muted">
+                        Browse all cars and check availability details.
+                    </p>
+                    <a asp-controller="Cars"
+                       asp-action="Index"
+                       class="btn btn-outline-primary">
+                        View Cars
+                    </a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>

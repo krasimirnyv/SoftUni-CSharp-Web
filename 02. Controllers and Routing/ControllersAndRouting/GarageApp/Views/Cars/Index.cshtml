@@ -1,0 +1,69 @@
+@using GarageApp.Models
+@model IEnumerable<Car>
+
+@{
+    ViewData["Title"] = "All Cars";
+}
+
+<h2>All Cars</h2>
+
+<form asp-controller="Cars" asp-action="Search" method="get" class="d-flex mb-3">
+    <div class="input-group">
+        <input type="text" name="searchString" class="form-control me-2" placeholder="Search for car by Make, Model, Year, etc. (e.g. Audi, A4, 2018)" value="@Context.Request.Query["searchString"]" />
+        <button type="submit" class="btn btn-primary">Search</button>
+    </div>
+</form>
+
+@if (!Model.Any())
+{
+    <p>No cars found.</p>
+}
+else
+{
+    <table class="table table-striped">
+        <thead>
+        <tr>
+            <th>Make</th>
+            <th>Model</th>
+            <th>Year</th>
+            <th>Type</th>
+            <th>Available</th>
+            <th>Garage</th>
+            <th></th>
+        </tr>
+        </thead>
+        <tbody>
+        @foreach (var c in Model)
+        {
+            <tr>
+                <td>@c.Make</td>
+                <td>@c.Model</td>
+                <td>@c.Year</td>
+                <td>@c.BodyStyle</td>
+                <td>@(c.IsAvailable ? "Yes" : "No")</td>
+                <td>
+                    @if (c.Garage != null)
+                    {
+                        <a asp-controller="Garage"
+                           asp-action="Details"
+                           asp-route-id="@c.Garage.Id">
+                            @c.Garage.Name
+                        </a>
+                    }
+                    else
+                    {
+                        <span>-</span>
+                    }
+                </td>
+                <td>
+                    <a asp-controller="Cars"
+                       asp-action="Details"
+                       asp-route-id="@c.Id">
+                        Details
+                    </a>
+                </td>
+            </tr>
+        }
+        </tbody>
+    </table>
+}

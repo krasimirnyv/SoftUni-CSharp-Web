@@ -1,0 +1,38 @@
+@using GarageApp.Models
+@model Car
+
+@{
+    ViewData["Title"] = "Car Details";
+}
+
+<h2>Car Details</h2>
+
+<div class="card">
+    <div class="card-body">
+        <h4 class="card-title">@Model.Make @Model.Model</h4>
+
+        <p class="card-text mb-1"><strong>Year:</strong> @Model.Year</p>
+        <p class="card-text mb-1"><strong>Type:</strong> @Model.BodyStyle</p>
+        <p class="card-text mb-1"><strong>Available:</strong> @(Model.IsAvailable ? "Yes" : "No")</p>
+
+        <p class="card-text mb-0">
+            <strong>Garage:</strong>
+            @if (Model.Garage != null)
+            {
+                <a asp-controller="Garage"
+                   asp-action="Details"
+                   asp-route-id="@Model.Garage.Id">
+                    @Model.Garage.Name (@Model.Garage.Location)
+                </a>
+            }
+            else
+            {
+                <span>-</span>
+            }
+        </p>
+    </div>
+</div>
+
+<div class="mt-3">
+    <a asp-controller="Cars" asp-action="Index">Back to Cars</a>
+</div>
