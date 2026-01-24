@@ -1,0 +1,52 @@
+﻿@{
+    ViewData["Title"] = "Home";
+}
+
+<section class="container text-center mt-5">
+
+    <article class="mb-5">
+        <h1 class="display-4 fw-semibold mb-3">
+            Welcome to Your Library
+        </h1>
+
+        <p class="lead text-muted">
+            Manage authors and books easily from one place.
+        </p>
+    </article>
+
+    <article class="row justify-content-center g-4">
+
+        <div class="col-md-4">
+            <div class="card h-100 shadow-sm">
+                <div class="card-body">
+                    <h5 class="card-title">Favorite Authors</h5>
+                    <p class="card-text text-muted">
+                        View all your favorite authors and explore their available books.
+                    </p>
+                    <a asp-controller="Authors"
+                       asp-action="Index"
+                       class="btn btn-outline-primary">
+                        View Authors
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="card h-100 shadow-sm">
+                <div class="card-body">
+                    <h5 class="card-title">Favorite Books</h5>
+                    <p class="card-text text-muted">
+                        Browse all books and check their details.
+                    </p>
+                    <a asp-controller="Books"
+                       asp-action="Index"
+                       class="btn btn-outline-primary">
+                        View Books
+                    </a>
+                </div>
+            </div>
+        </div>
+
+    </article>
+</section>

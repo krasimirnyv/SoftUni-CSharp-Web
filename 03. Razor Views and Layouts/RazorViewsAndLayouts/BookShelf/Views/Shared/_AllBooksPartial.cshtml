@@ -1,0 +1,26 @@
+@model IEnumerable<Book>
+
+@if (!Model.Any())
+{
+    <p class="text-muted">No books yet.</p>
+}
+else
+{
+    <table class="table table-bordered">
+        <thead>
+        <tr>
+            <th>Title</th>
+            <th style="width: 120px;">Year</th>
+        </tr>
+        </thead>
+        <tbody>
+        @foreach (Book b in Model)
+        {
+            <tr>
+                <td>@b.Title</td>
+                <td>@b.Year</td>
+            </tr>
+        }
+        </tbody>
+    </table>
+}
