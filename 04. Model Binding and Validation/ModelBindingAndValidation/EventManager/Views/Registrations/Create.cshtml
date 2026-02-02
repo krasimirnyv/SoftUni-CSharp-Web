@@ -1,0 +1,61 @@
+﻿@model Registration
+
+@{
+    ViewData["Title"] = "Register";
+}
+
+<h1 class="mb-3">Register for Event</h1>
+<div class="text-muted mb-4">
+    This form demonstrates route + form binding and validation.
+</div>
+
+<div class="row">
+    <div class="col-12 col-lg-7">
+        <div class="card shadow-sm">
+            <div class="card-body">
+                <form asp-action="Create" method="post" novalidate>
+                    <div asp-validation-summary="ModelOnly" class="alert alert-danger" role="alert"></div>
+
+                    <input type="hidden" asp-for="EventId" />
+
+                    <div class="mb-3">
+                        <label asp-for="ParticipantName" class="form-label"></label>
+                        <input asp-for="ParticipantName" class="form-control" />
+                        <span asp-validation-for="ParticipantName" class="text-danger"></span>
+                    </div>
+
+                    <div class="mb-3">
+                        <label asp-for="Email" class="form-label"></label>
+                        <input asp-for="Email" class="form-control" />
+                        <span asp-validation-for="Email" class="text-danger"></span>
+                    </div>
+
+                    <div class="d-flex gap-2">
+                        <button type="submit" class="btn btn-success">Confirm Registration</button>
+                        <a class="btn btn-outline-secondary"
+                           asp-controller="Events"
+                           asp-action="Details"
+                           asp-route-id="@Model.EventId">
+                            Cancel
+                        </a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-12 col-lg-5 mt-3 mt-lg-0">
+        <div class="card border-0 bg-light">
+            <div class="card-body">
+                <h5 class="card-title">Tip</h5>
+                <p class="mb-0">
+                    Try typing an invalid email to see the <code>[EmailAddress]</code> validation in action.
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

@@ -1,0 +1,114 @@
+﻿@using EventManager.ViewModels.Registration
+@model DetailsEventViewModel
+@{
+    ViewData["Title"] = "Event Details";
+}
+
+<div class="d-flex justify-content-between align-items-start mb-3">
+    <div>
+        <h1 class="mb-1">@Model.Title</h1>
+        <div class="text-muted">
+            Category: <span class="badge bg-secondary">@Model.CategoryName</span>
+        </div>
+    </div>
+
+    <div class="d-flex gap-2">
+        <a class="btn btn-outline-secondary" asp-controller="Events" asp-action="Index">Back</a>
+        <a class="btn btn-success"
+           asp-controller="Registrations"
+           asp-action="Create"
+           asp-route-eventId="@Model.Id">
+            Register
+        </a>
+    </div>
+</div>
+
+<div class="row g-3">
+    <div class="col-12 col-lg-8">
+        <div class="card shadow-sm">
+            <div class="card-body">
+                <h5 class="card-title">Details</h5>
+
+                @if (!string.IsNullOrWhiteSpace(Model.Description))
+                {
+                    <p class="text-muted">@Model.Description</p>
+                }
+                else
+                {
+                    <p class="text-muted fst-italic">No description provided.</p>
+                }
+
+                <div class="row g-3 mt-1">
+                    <div class="col-12 col-md-6">
+                        <div class="border rounded p-3">
+                            <div class="text-muted small">Start</div>
+                            <div class="fw-semibold">@Model.StartDate</div>
+                        </div>
+                    </div>
+
+                    <div class="col-12 col-md-6">
+                        <div class="border rounded p-3">
+                            <div class="text-muted small">End</div>
+                            <div class="fw-semibold">@Model.EndDate</div>
+                        </div>
+                    </div>
+
+                    <div class="col-12">
+                        <div class="border rounded p-3">
+                            <div class="text-muted small">Max participants</div>
+                            <div class="fw-semibold">@Model.MaxParticipants</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card shadow-sm mt-3">
+            <div class="card-body">
+                <h5 class="card-title">Registrations</h5>
+
+                @if (Model.Registrations == null || !Model.Registrations.Any())
+                {
+                    <div class="alert alert-light mb-0">
+                        No registrations yet. Be the first to register!
+                    </div>
+                }
+                else
+                {
+                    <div class="table-responsive">
+                        <table class="table table-sm align-middle mb-0">
+                            <thead>
+                                <tr>
+                                    <th>Participant</th>
+                                    <th>Email</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (RegisteredParticipantsViewModel r in Model.Registrations)
+                                {
+                                    <tr>
+                                        <td>@r.ParticipantName</td>
+                                        <td>@r.Email</td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+
+    <div class="col-12 col-lg-4">
+        <div class="card border-0 bg-light">
+            <div class="card-body">
+                <h5 class="card-title">Try validation</h5>
+                <ul class="mb-0">
+                    <li>Open <strong>Create Event</strong> and submit empty form.</li>
+                    <li>Try invalid MaxParticipants (0 or negative).</li>
+                    <li>Test your custom date rules in the next steps.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
