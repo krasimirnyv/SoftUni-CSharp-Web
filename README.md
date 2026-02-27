@@ -38,19 +38,21 @@
 
 7. ASP.NET Core Identity
 
+8. Workshop Demo Project
+
 
 **ASP.NET Advanced**
 
-1. ASP.NET Core Basics
+9. Routing and Binding, Views
 
-2. Controllers and Routing
+10. Application Flow, Filters & Middleware
 
-3. Razor Views and Layouts
+11. Workshop?
 
-4. Model Binding and Validation
+12. Web API and Security
 
-5. URLs and Views
+13. Advanced Identity and Areas
 
-6. Layers, Services, DI and Asynchronous Processing
+14. Advanced Topics
 
-7. ASP.NET Core Identity
+15. Testing
