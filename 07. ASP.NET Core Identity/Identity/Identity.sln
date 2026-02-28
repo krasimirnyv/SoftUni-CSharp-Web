@@ -1,0 +1,59 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IdentityNotes.Web", "IdentityNotes.Web\IdentityNotes.Web.csproj", "{2D45D40F-3B1C-4156-A11D-D26DE2FA2D75}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Data", "Data", "{18313EF3-7546-40BB-A000-D07A228E028A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IdentityNotes.Data", "IdentityNotes.Data\IdentityNotes.Data.csproj", "{050B9374-B576-4248-A1BF-CEC2E02DAC4A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IdentityNotes.Data.Models", "IdentityNotes.Data.Models\IdentityNotes.Data.Models.csproj", "{4522842E-9271-49EE-9963-C40EDE93E984}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Web", "Web", "{9176E9C0-5342-4BDD-A220-DADE63D9979A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IdentityNotes.ViewModels", "IdentityNotes.ViewModels\IdentityNotes.ViewModels.csproj", "{B27449F6-52E7-44C8-9B4F-E49C01261B17}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Service", "Service", "{3F0EFB6D-9213-4454-A85A-468AF99CAF1F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IdentityNotes.Service.Core", "IdentityNotes.Service.Core\IdentityNotes.Service.Core.csproj", "{974F7310-6A9B-42C4-842B-1EECB08334C7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IdentityNotes.GCommon", "IdentityNotes.GCommon\IdentityNotes.GCommon.csproj", "{D8777A9E-6978-47E1-BCD5-DD06F7C9F769}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2D45D40F-3B1C-4156-A11D-D26DE2FA2D75}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2D45D40F-3B1C-4156-A11D-D26DE2FA2D75}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2D45D40F-3B1C-4156-A11D-D26DE2FA2D75}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2D45D40F-3B1C-4156-A11D-D26DE2FA2D75}.Release|Any CPU.Build.0 = Release|Any CPU
+		{050B9374-B576-4248-A1BF-CEC2E02DAC4A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{050B9374-B576-4248-A1BF-CEC2E02DAC4A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{050B9374-B576-4248-A1BF-CEC2E02DAC4A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{050B9374-B576-4248-A1BF-CEC2E02DAC4A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4522842E-9271-49EE-9963-C40EDE93E984}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4522842E-9271-49EE-9963-C40EDE93E984}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4522842E-9271-49EE-9963-C40EDE93E984}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4522842E-9271-49EE-9963-C40EDE93E984}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B27449F6-52E7-44C8-9B4F-E49C01261B17}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B27449F6-52E7-44C8-9B4F-E49C01261B17}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B27449F6-52E7-44C8-9B4F-E49C01261B17}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B27449F6-52E7-44C8-9B4F-E49C01261B17}.Release|Any CPU.Build.0 = Release|Any CPU
+		{974F7310-6A9B-42C4-842B-1EECB08334C7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{974F7310-6A9B-42C4-842B-1EECB08334C7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{974F7310-6A9B-42C4-842B-1EECB08334C7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{974F7310-6A9B-42C4-842B-1EECB08334C7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D8777A9E-6978-47E1-BCD5-DD06F7C9F769}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D8777A9E-6978-47E1-BCD5-DD06F7C9F769}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D8777A9E-6978-47E1-BCD5-DD06F7C9F769}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D8777A9E-6978-47E1-BCD5-DD06F7C9F769}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{050B9374-B576-4248-A1BF-CEC2E02DAC4A} = {18313EF3-7546-40BB-A000-D07A228E028A}
+		{4522842E-9271-49EE-9963-C40EDE93E984} = {18313EF3-7546-40BB-A000-D07A228E028A}
+		{2D45D40F-3B1C-4156-A11D-D26DE2FA2D75} = {9176E9C0-5342-4BDD-A220-DADE63D9979A}
+		{B27449F6-52E7-44C8-9B4F-E49C01261B17} = {9176E9C0-5342-4BDD-A220-DADE63D9979A}
+		{974F7310-6A9B-42C4-842B-1EECB08334C7} = {3F0EFB6D-9213-4454-A85A-468AF99CAF1F}
+	EndGlobalSection
+EndGlobal

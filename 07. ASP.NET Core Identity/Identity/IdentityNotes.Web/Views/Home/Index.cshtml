@@ -1,0 +1,43 @@
+﻿@{
+    ViewData["Title"] = "Welcome";
+}
+
+<div class="text-center mt-5">
+
+    <h1 class="display-4">Welcome to Identity Notes</h1>
+
+    <p class="lead mt-3">
+        A simple application for creating personal notes.
+    </p>
+
+    <hr class="my-4" />
+
+   @if (User.Identity?.IsAuthenticated == false)
+    {
+        <p>
+            Please login or register to continue.
+        </p>
+
+        <div class="mt-4">
+
+            <a asp-area="Identity"
+               asp-page="/Account/Login"
+               class="btn btn-primary btn-lg me-3">
+                Login
+            </a>
+
+            <a asp-area="Identity"
+               asp-page="/Account/Register"
+               class="btn btn-outline-primary btn-lg">
+                Register
+            </a>
+
+        </div>
+    }
+    else
+    {
+        <div class="mx-auto">
+            <a asp-controller="Note" asp-action="Create" class="btn btn-primary btn-outline-info btn-lg text-white">Create your first note!</a>
+        </div>
+    }
+</div>

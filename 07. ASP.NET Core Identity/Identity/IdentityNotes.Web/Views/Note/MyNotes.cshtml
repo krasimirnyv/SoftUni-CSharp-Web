@@ -1,0 +1,38 @@
+﻿@model IEnumerable<NoteListItemViewModel>
+
+<h2>My Notes</h2>
+
+<div class="mb-3">
+    <a asp-controller="Note" asp-action="Create" class="btn btn-primary">Create Note</a>
+</div>
+
+@if (!Model.Any())
+{
+    <p>No notes yet.</p>
+}
+else
+{
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Title</th>
+                <th>Created On</th>
+                <th style="width: 220px;"></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (NoteListItemViewModel note in Model)
+            {
+                <tr>
+                    <td>@note.Title</td>
+                    <td>@note.CreatedOn</td>
+                    <td>
+                        <a asp-controller="Note" asp-action="Details" asp-route-noteId="@note.Id" class="btn btn-primary btn-sm">Details</a>
+                        
+                        <a asp-controller="Note" asp-action="Edit" asp-route-noteId="@note.Id" class="btn btn-warning btn-sm">Edit</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
