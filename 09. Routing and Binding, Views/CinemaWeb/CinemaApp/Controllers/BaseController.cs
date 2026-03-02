@@ -1,0 +1,13 @@
+namespace CinemaApp.Web.Controllers;
+
+using System.Security.Claims;
+
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
+
+[Authorize]
+public class BaseController : Controller
+{
+    public string? GetUserId()
+        => User.FindFirstValue(ClaimTypes.NameIdentifier);
+}
