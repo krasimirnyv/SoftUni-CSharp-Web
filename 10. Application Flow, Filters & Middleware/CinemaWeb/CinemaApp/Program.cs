@@ -1,10 +1,13 @@
 namespace CinemaApp.Web;
 
-using Data;
+using ViewModels.Movie;
 
 using Services.Core;
 using Services.Core.Contracts;
+using Services.Models.Movie;
+using Services.AutoMapping;
 
+using Data;
 using Data.Repository;
 using Data.Repository.Contracts;
 
@@ -27,6 +30,8 @@ public class Program
             ? secretConnection
             : defaultConnection 
               ?? throw new InvalidOperationException("Connection string 'DefaultConnection' not found.");
+
+        AutoMapperConfig.RegisterMappings(typeof(MovieAllDto).Assembly, typeof(AllMoviesIndexViewModel).Assembly);
         
         builder.Services.AddDbContext<CinemaDbContext>(options =>
         {
@@ -65,6 +70,8 @@ public class Program
         builder.Services.AddScoped<IMovieRepository, MovieRepository>();
         
         builder.Services.AddScoped<IMovieService, MovieService>();
+
+        builder.Services.AddSingleton(AutoMapperConfig.MapperInstance);
         
         builder.Services.AddControllersWithViews();
         builder.Services.AddRazorPages();

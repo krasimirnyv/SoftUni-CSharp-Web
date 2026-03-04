@@ -2,10 +2,24 @@ namespace CinemaApp.Services.Core.Contracts;
 
 using Web.ViewModels.Movie;
 
+using Models.Movie;
+
+
 public interface IMovieService
 {
-    Task<IEnumerable<AllMoviesIndexViewModel>> GetAllMovies();
+    Task<IEnumerable<MovieAllDto>> GetAllMoviesOrderedAsync();
 
-    // Service to be refactored to work without coupling to ViewModels
-    Task CreateMovieAsync(MovieFormModel formModel);
+    Task CreateMovieAsync(MovieDetailsDto movieDetailsDto);
+
+    Task<MovieDetailsDto?> GetMovieDetailsByIdAsync(Guid movieId);
+    
+    Task<MovieDetailsDto?> GetMovieFormModelByIdAsync(Guid movieId);
+    
+    Task<bool> ExistsByIdAsync(Guid movieId);
+    
+    Task EditMovieAsync(Guid movieId, MovieDetailsDto movieDetailsDto);
+    
+    Task SoftDeleteMovieAsync(Guid movieId);
+    
+    Task HardDeleteMovieAsync(Guid movieId);
 }

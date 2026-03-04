@@ -29,6 +29,6 @@ public static class OutputMessages
 
         public const string ImageUrlMaxLengthMessage = "Image URL cannot exceed {1} characters.";
 
-        public const string CreateMovieFailureMessage = "An error occured while creating the movie. Please try again in a few minutes.";
+        public const string CrudMovieFailureMessage = "An error occured while {0} the movie. Please try again in a few minutes.";
     }
 }
