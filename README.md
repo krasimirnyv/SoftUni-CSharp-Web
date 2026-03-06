@@ -47,7 +47,7 @@
 
 10. Application Flow, Filters & Middleware
 
-11. Workshop?
+11. Workshop - Expanding Application Functionality
 
 12. Web API and Security
 
