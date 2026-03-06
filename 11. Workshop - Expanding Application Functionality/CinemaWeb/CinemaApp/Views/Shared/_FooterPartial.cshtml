@@ -1,0 +1,10 @@
+@{
+    int currentYear = DateTime.UtcNow.Year;
+    string footerNote = (2025 == currentYear) ? $"{currentYear}" : $"{2025} - {currentYear}";
+}
+
+<footer class="footer text-muted">
+    <div class="container">
+        <p>&copy; @footerNote CinemaWebApp | Bringing Cinema and Movies to You</p>
+    </div>
+</footer>
